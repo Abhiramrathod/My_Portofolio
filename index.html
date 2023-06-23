@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      }
+      .profile-pic {
+        width: 200px; /* Adjust the width as needed */
+        height: 200px; /* Adjust the height as needed */
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .hidden {
+        display: none;
+      }
+      footer {
+        margin-top: auto;
+        text-align: center;
+        background-color: #080808;
+        padding: 20px;
+        width: 100%;
+      }
+    </style>
+    <script>
+      function loadContent(pageId) {
+        // Hide all content sections
+        var sections = document.getElementsByClassName("container");
+        for (var i = 0; i < sections.length; i++) {
+          sections[i].classList.add("hidden");
+        }
+
+        // Show the selected content section
+        var selectedSection = document.getElementById(pageId);
+        selectedSection.classList.remove("hidden");
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="loadContent('home')">Home</a></li>
+          <li><a href="#" onclick="loadContent('about')">About</a></li>
+          <li><a href="#" onclick="loadContent('skills')">Skills</a></li>
+          <li><a href="#" onclick="loadContent('education')">Education</a></li>
+          <li>
+            <a href="#" onclick="loadContent('experience')">Work Experience</a>
+          </li>
+          <li><a href="#" onclick="loadContent('projects')">Projects</a></li>
+          <li><a href="#" onclick="loadContent('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="content">
+      <div id="home" class="container">
+        <img src="my pic.jpeg" alt="Profile Picture" class="profile-pic" />
+        <h1>B. Abhiram Rathod</h1>
+        <p>Aspiring Software Developer</p>
+      </div>
+
+      <div id="about" class="container hidden">
+        <h2>About Me</h2>
+        <p>
+          My name is B. Abhiram Rathod, and I am pursuing my B.Tech degree at
+          the National Institute of Technology Tiruchirappalli. I am passionate
+          about software development and aspire to work as a software developer
+          in my dream company.
+        </p>
+      </div>
+
+      <div id="skills" class="container hidden">
+        <h2>Skills</h2>
+        <ul>
+          <li>C++</li>
+          <li>Data Structures and Algorithms</li>
+          <li>Problem Solving</li>
+          <li>Communication</li>
+          <li>Presentation Skills</li>
+          <li>Public Speaking</li>
+        </ul>
+      </div>
+
+      <div id="education" class="container hidden">
+        <h2>Education</h2>
+        <p>B.Tech in National Institute of Technology Tiruchirappalli</p>
+      </div>
+
+      <div id="experience" class="container hidden">
+        <h2>Work Experience</h2>
+        <p>Internship at Bharat Intern on Web Development</p>
+      </div>
+
+      <div id="projects" class="container hidden">
+        <h2>Projects</h2>
+        <p>
+          Highlight your notable projects with descriptions and screenshots.
+        </p>
+      </div>
+
+      <div id="contact" class="container hidden">
+        <h2>Contact</h2>
+        <p>
+          Feel free to contact me via email.
+        </p>
+        <p>Email: abhiramrathod2003@gmail.com</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 B. Abhiram Rathod. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Load the home section by default
+      loadContent("home");
+    </script>
+  </body>
+</html>
